@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serviços avulsos · Base Digital</title>
+<meta name="description" content="Vídeos, artes e animações da Base Digital, avulso ou em pacote, sem plano mensal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cyprus: #004741; --mint: #8CD3C3; --sand: #F0EDE4; --forest: #14231D;
+    --bg: #FAF9F6; --surface: #FFFFFF; --surface-2: #F0EDE4; --text: #14231D; --muted: #5A574D;
+    --line: #E4E1D6; --accent: #004741; --accent-text: #00695F; --wa: #1FA855; --wa-hover: #178A45;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1815; --surface: #16241F; --surface-2: #1B2D27; --text: #F0EDE4; --muted: #B4B0A3;
+      --line: #264038; --accent: #8CD3C3; --accent-text: #8CD3C3;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1815; --surface: #16241F; --surface-2: #1B2D27; --text: #F0EDE4; --muted: #B4B0A3;
+    --line: #264038; --accent: #8CD3C3; --accent-text: #8CD3C3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Manrope', system-ui, sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  h1, h2, h3 { font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 720px) { .wrap { padding: 0 32px; } }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 14px; }
+  .on-dark .eyebrow { color: var(--mint); }
+
+  .wordmark { display: inline-block; line-height: 1; color: var(--sand); }
+  .wordmark b { font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 28px; display: block; }
+  .wordmark span { display: block; margin-top: 6px; padding-top: 6px; border-top: 1.5px solid rgba(240,237,228,0.35); font-size: 9px; font-weight: 700; letter-spacing: 0.38em; text-transform: uppercase; color: rgba(240,237,228,0.7); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; padding: 14px 24px; border-radius: 10px; border: 0; cursor: pointer; transition: transform .15s ease, background .15s ease; text-align: center; }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 6px 20px rgba(31,168,85,0.28); }
+  .btn-wa:hover { background: var(--wa-hover); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+  .btn-outline:hover { background: var(--accent); color: var(--bg); }
+  .btn-block { width: 100%; }
+  .btn:focus-visible, a:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
+
+  header.top { position: sticky; top: 0; z-index: 50; background: var(--cyprus); border-bottom: 1px solid rgba(240,237,228,0.12); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+  header.top nav { display: flex; align-items: center; gap: 18px; }
+  header.top nav a.link { color: rgba(240,237,228,0.85); font-size: 14px; font-weight: 600; }
+  header.top nav a.link:hover { color: var(--sand); }
+  header.top .btn { padding: 10px 18px; font-size: 14px; border-radius: 8px; box-shadow: none; }
+  header.top .btn svg { width: 17px; height: 17px; }
+  @media (max-width: 480px) { header.top nav a.link { display: none; } }
+
+  .hero { background: var(--cyprus); color: var(--sand); padding: 56px 0 64px; }
+  .hero h1 { font-size: clamp(32px, 6vw, 54px); line-height: 1.08; font-weight: 700; max-width: 760px; }
+  .hero h1 em { font-style: normal; color: var(--mint); }
+  .hero p { margin-top: 18px; font-size: clamp(16px, 2.2vw, 19px); color: rgba(240,237,228,0.82); max-width: 560px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .jump a { border: 1.5px solid rgba(240,237,228,0.4); color: var(--sand); padding: 9px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; }
+  .jump a:hover { border-color: var(--sand); }
+
+  section { padding: 64px 0; }
+  section:nth-of-type(even) { background: var(--surface-2); }
+  section h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.12; font-weight: 700; }
+  section .lead { color: var(--muted); font-size: 17px; margin-top: 10px; max-width: 560px; }
+
+  .block { display: grid; gap: 28px; margin-top: 30px; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 900px) { .block { grid-template-columns: 260px 1fr; gap: 40px; } }
+  .single { background: var(--cyprus); color: var(--sand); border-radius: 16px; padding: 26px; }
+  .single small { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mint); }
+  .single .price { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; line-height: 1.1; margin-top: 8px; }
+  .single .per { color: rgba(240,237,228,0.75); font-size: 14px; }
+  .packs { display: grid; gap: 12px; grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .packs { grid-template-columns: repeat(3, 1fr); } }
+  .pack { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  section:nth-of-type(even) .pack { background: var(--bg); }
+  .pack small { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); }
+  .pack .price { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; margin: 6px 0 2px; }
+  .pack .each { color: var(--muted); font-size: 14px; }
+  .cta-row { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 520px) { .cta-row .btn { width: 100%; } }
+
+  .note { margin-top: 0; padding: 22px 0 0; font-size: 15px; color: var(--muted); max-width: 720px; }
+  .note a { color: var(--accent-text); font-weight: 700; text-decoration: underline; }
+  section.final { background: var(--cyprus); color: var(--sand); padding: 72px 0; }
+  .final h2 { font-size: clamp(28px, 5vw, 44px); }
+  .final p { margin-top: 12px; color: rgba(240,237,228,0.82); max-width: 560px; }
+  .final .cta-row { margin-top: 26px; }
+  .contacts { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px 48px; }
+  .contacts small { display: block; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(240,237,228,0.6); font-weight: 600; }
+  .contacts a { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; }
+  footer { background: var(--forest); color: rgba(240,237,228,0.6); padding: 28px 0 90px; font-size: 13px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  @media (min-width: 900px) { footer { padding-bottom: 28px; } }
+  .fab { position: fixed; right: 16px; bottom: 16px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(0,0,0,0.3); transition: transform .15s ease; }
+  .fab:hover { transform: scale(1.06); }
+  .fab svg { width: 30px; height: 30px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .fab { transition: none; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.59 5.93L.1 24l6.4-1.68a11.8 11.8 0 0 0 5.54 1.41h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.41zM12.05 21.7h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.8 1 1.01-3.7-.23-.38a9.8 9.8 0 0 1-1.5-5.2c0-5.43 4.42-9.85 9.86-9.85 2.63 0 5.1 1.03 6.96 2.89a9.78 9.78 0 0 1 2.88 6.97c0 5.43-4.43 9.85-9.81 9.85zm5.4-7.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.57-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a href="index.html" class="wordmark" aria-label="Base Digital"><b>Base</b><span>Digital</span></a>
+    <nav>
+      <a class="link" href="index.html#planos">Planos mensais</a>
+      <a class="btn btn-wa wa-link" data-msg="Olá! Tenho interesse nos serviços avulsos da Base Digital." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar no WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero on-dark">
+    <div class="wrap">
+      <div class="eyebrow">Serviços avulsos</div>
+      <h1>Vídeos, artes e animações, <em>avulso ou em pacote.</em></h1>
+      <p>Sem plano mensal. Escolha só o que precisa.</p>
+      <div class="jump"><a href="#videos">Vídeos</a><a href="#artes">Artes</a><a href="#animacoes">Animações</a></div>
+    </div>
+  </div>
+
+  <section id="videos">
+    <div class="wrap">
+      <div class="eyebrow">Vídeos</div>
+      <h2>Reels prontos para postar</h2>
+      <p class="lead">Roteiro, gravação e edição feitos pela Base Digital.</p>
+      <div class="block">
+        <div class="single"><small>Avulso</small><div class="price">R$ 100</div><div class="per">por vídeo</div></div>
+        <div class="packs">
+          <div class="pack"><small>5 vídeos</small><div class="price">R$ 450</div><div class="each">R$ 90 cada</div></div>
+          <div class="pack"><small>10 vídeos</small><div class="price">R$ 800</div><div class="each">R$ 80 cada</div></div>
+          <div class="pack"><small>20 vídeos</small><div class="price">R$ 1.400</div><div class="each">R$ 70 cada</div></div>
+        </div>
+      </div>
+      <div class="cta-row"><a class="btn btn-wa wa-link" data-msg="Olá! Tenho interesse em vídeos da Base Digital (avulso ou pacote)." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Quero vídeos</a></div>
+    </div>
+  </section>
+
+  <section id="artes">
+    <div class="wrap">
+      <div class="eyebrow">Artes</div>
+      <h2>Posts e carrosséis com a cara da marca</h2>
+      <p class="lead">Design feito sob medida para o seu perfil.</p>
+      <div class="block">
+        <div class="single"><small>Avulso</small><div class="price">R$ 45</div><div class="per">por arte</div></div>
+        <div class="packs">
+          <div class="pack"><small>5 artes</small><div class="price">R$ 180</div><div class="each">R$ 36 cada</div></div>
+          <div class="pack"><small>10 artes</small><div class="price">R$ 350</div><div class="each">R$ 35 cada</div></div>
+          <div class="pack"><small>20 artes</small><div class="price">R$ 600</div><div class="each">R$ 30 cada</div></div>
+        </div>
+      </div>
+      <div class="cta-row"><a class="btn btn-wa wa-link" data-msg="Olá! Tenho interesse em artes da Base Digital (avulso ou pacote)." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Quero artes</a></div>
+    </div>
+  </section>
+
+  <section id="animacoes">
+    <div class="wrap">
+      <div class="eyebrow">Animações</div>
+      <h2>Seus produtos em movimento</h2>
+      <p class="lead">Vídeos feitos a partir de imagens dos seus produtos.</p>
+      <div class="block">
+        <div class="single"><small>Avulso</small><div class="price">R$ 60</div><div class="per">por animação</div></div>
+        <div class="packs">
+          <div class="pack"><small>5 animações</small><div class="price">R$ 150</div><div class="each">R$ 30 cada</div></div>
+          <div class="pack"><small>10 animações</small><div class="price">R$ 300</div><div class="each">R$ 30 cada</div></div>
+          <div class="pack"><small>20 animações</small><div class="price">R$ 600</div><div class="each">R$ 30 cada</div></div>
+        </div>
+      </div>
+      <div class="cta-row"><a class="btn btn-wa wa-link" data-msg="Olá! Tenho interesse em animações da Base Digital (avulso ou pacote)." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Quero animações</a></div>
+      <p class="note">Avulsos e pacotes não incluem plano estratégico nem relatório. Quer estratégia e acompanhamento todo mês? <a href="index.html#planos">Veja os planos</a>.</p>
+    </div>
+  </section>
+
+  <section class="final on-dark">
+    <div class="wrap">
+      <div class="eyebrow">Outro formato?</div>
+      <h2>Não achou o que precisa?</h2>
+      <p>Conta o que você tem em mente e a gente combina o melhor formato.</p>
+      <div class="cta-row"><a class="btn btn-wa wa-link" data-msg="Olá! Tenho interesse em um serviço da Base Digital e queria combinar o formato." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar no WhatsApp</a></div>
+      <div class="contacts">
+        <div><small>WhatsApp</small><a class="wa-link" data-msg="Olá! Tenho interesse nos serviços da Base Digital." href="#" target="_blank" rel="noopener">(32) 9 9812-6127</a></div>
+        <div><small>Instagram</small><a href="https://www.instagram.com/basedigital.mkt/" target="_blank" rel="noopener">@basedigital.mkt</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Base Digital · Juiz de Fora, MG</span>
+    <span>Marketing para Instagram</span>
+  </div>
+</footer>
+
+<a class="fab wa-link" data-msg="Olá! Tenho interesse nos serviços da Base Digital." href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script>
+  var WA_NUMBER = "5532998126127";
+  document.querySelectorAll(".wa-link").forEach(function (a) {
+    a.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(a.getAttribute("data-msg"));
+  });
+</script>
+</body>
+</html>

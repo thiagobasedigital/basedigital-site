@@ -187,8 +187,32 @@
 
   /* Scope */
   .scope { display: grid; gap: 14px; margin-top: 36px; grid-template-columns: 1fr; }
-  @media (min-width: 760px) { .scope { grid-template-columns: 1.15fr 1fr; } }
-  .scope .box { border-radius: 16px; padding: 28px; }
+  .scope .box { border-radius: 16px; padding: 28px; max-width: 640px; }
+  .scope .yes ul { grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .scope .yes ul { grid-template-columns: 1fr 1fr; } .scope .box { max-width: 760px; } }
+
+  /* Basic strip */
+  .basic {
+    margin-top: 28px; border: 1.5px dashed var(--line); border-radius: 16px; padding: 22px 26px;
+    display: flex; flex-wrap: wrap; gap: 18px 32px; align-items: center; justify-content: space-between;
+  }
+  .basic .level { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); }
+  .basic h3 { font-size: 22px; margin: 4px 0 4px; }
+  .basic p { color: var(--muted); font-size: 15px; max-width: 460px; }
+  .basic-side { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .basic .price { font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; line-height: 1; }
+  .basic .price small { font-size: 14px; font-weight: 500; color: var(--muted); }
+  @media (max-width: 520px) { .basic-side, .basic-side .btn { width: 100%; } }
+
+  /* Services cards */
+  .svc-grid { display: grid; gap: 14px; margin-top: 32px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
+  .svc { background: var(--surface-2); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 6px; transition: transform .15s ease; }
+  .svc:hover { transform: translateY(-2px); }
+  .svc h3 { font-size: 20px; }
+  .svc p { color: var(--muted); font-size: 14.5px; flex: 1; }
+  .svc span { margin-top: 10px; font-weight: 700; font-size: 14px; color: var(--accent-text); }
   .scope .yes { background: var(--cyprus); color: var(--sand); }
   .scope .no { background: var(--surface); border: 1px solid var(--line); }
   .scope h3 { font-size: 22px; margin-bottom: 16px; }
@@ -243,7 +267,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a href="#topo" class="wordmark" aria-label="Base Digital"><b>Base</b><span>Digital</span></a>
+    <a href="index.html" class="wordmark" aria-label="Base Digital"><b>Base</b><span>Digital</span></a>
     <a class="btn btn-wa wa-link" data-msg="Olá! Tenho interesse em contratar o serviço de marketing da Base Digital." href="#" target="_blank" rel="noopener">
       <svg><use href="#wa"/></svg><span>Falar<span class="long"> no WhatsApp</span></span>
     </a>
@@ -323,7 +347,8 @@
           <ul>
             <li>Plano estratégico essencial: pilares, tom e formatos</li>
             <li>1 sessão de gravação por mês</li>
-            <li>Média de ~8 postagens: 4 Reels e 4 artes</li>
+            <li>Média de ~8 postagens: 7 Reels e 1 arte</li>
+            <li>4 stories de brindes por mês</li>
             <li>Relatório mensal</li>
             <li>Ajuste inicial da bio</li>
           </ul>
@@ -340,7 +365,8 @@
           <ul>
             <li>Plano estratégico completo, com linha editorial e calendário trimestral</li>
             <li>2 sessões de gravação por mês</li>
-            <li>Média de ~16 postagens: 8 Reels e 8 artes</li>
+            <li>Média de ~16 postagens: 14 Reels e 2 artes</li>
+            <li>8 stories de brindes por mês</li>
             <li>Relatório e reunião mensal de 30 min</li>
             <li>Bio, destaques e organização do perfil</li>
           </ul>
@@ -357,7 +383,8 @@
           <ul>
             <li>Plano completo + análise de concorrentes e tendências do nicho</li>
             <li>3 sessões de gravação por mês</li>
-            <li>Média de ~24 postagens: 12 Reels e 12 artes</li>
+            <li>Média de ~24 postagens: 22 Reels e 2 artes</li>
+            <li>12 stories de brindes por mês</li>
             <li>Relatório e reunião quinzenal</li>
             <li>Bio, destaques e organização do perfil</li>
             <li>1 campanha temática por trimestre</li>
@@ -366,6 +393,18 @@
         </article>
       </div>
       <p class="fineprint">A quantidade de postagens é uma média mensal, não uma promessa por peça.</p>
+
+      <div class="basic">
+        <div>
+          <div class="level">Ainda não é o momento?</div>
+          <h3>Conheça o Básico</h3>
+          <p>2 Reels e 8 artes por mês, com 1 sessão de gravação. Para começar com pouco investimento.</p>
+        </div>
+        <div class="basic-side">
+          <div class="price">R$ 350<small> /mês</small></div>
+          <a class="btn btn-outline wa-link" data-msg="Olá! Tenho interesse em contratar o serviço de marketing da Base Digital, plano Básico." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Quero o Básico</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -373,10 +412,9 @@
   <section class="alt">
     <div class="wrap">
       <div class="eyebrow">Escopo</div>
-      <h2>O que todo plano inclui, e o que não fazemos</h2>
+      <h2>O que todo plano inclui</h2>
       <div class="scope">
         <div class="box yes">
-          <h3>Todos os planos incluem</h3>
           <ul>
             <li>Roteiro e copy de cada peça</li>
             <li>Gravação, edição de vídeo e artes</li>
@@ -386,45 +424,50 @@
             <li>Relatório mensal de desempenho</li>
           </ul>
         </div>
-        <div class="box no">
-          <h3>O que não fazemos</h3>
-          <ul>
-            <li>Tráfego pago</li>
-            <li>Site e loja virtual</li>
-            <li>Outras redes além do Instagram</li>
-            <li>Criação de logo e identidade visual</li>
-            <li>Promessa de vendas ou de resultado garantido</li>
-          </ul>
-        </div>
       </div>
       <p class="extra">Precisa de mais gravação no mês? Sessão adicional: <strong>R$ 450</strong>.</p>
     </div>
   </section>
 
+  <!-- OUTROS SERVIÇOS -->
+  <section id="servicos">
+    <div class="wrap">
+      <div class="eyebrow">Outros serviços</div>
+      <h2>Precisa só de uma parte?</h2>
+      <p class="lead">Contrate avulso ou em pacote, sem plano mensal.</p>
+      <div class="svc-grid">
+        <a class="svc" href="servicos.html#videos"><h3>Vídeos</h3><p>Reels com roteiro, gravação e edição.</p><span>Ver valores →</span></a>
+        <a class="svc" href="servicos.html#artes"><h3>Artes</h3><p>Posts e carrosséis com a cara da marca.</p><span>Ver valores →</span></a>
+        <a class="svc" href="servicos.html#animacoes"><h3>Animações</h3><p>Vídeos feitos a partir de imagens dos produtos.</p><span>Ver valores →</span></a>
+        <a class="svc wa-link" data-msg="Olá! Tenho interesse em identidade visual com a Base Digital." href="#" target="_blank" rel="noopener"><h3>Identidade visual</h3><p>Logo e identidade para a sua marca.</p><span>Pedir orçamento →</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- RESULTADO -->
-  <section>
+  <section class="alt">
     <div class="wrap">
       <div class="eyebrow">Resultado</div>
       <h2>Como medimos o que entregamos</h2>
       <p class="lead">Medimos o que mostra uma marca sendo desejada. A venda é consequência do posicionamento, não uma promessa.</p>
       <div class="metrics" style="--m:1">
-        <div class="metric" style="background:var(--surface-2)">
+        <div class="metric" style="background:var(--surface)">
           <svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="8" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="17" rx="1"/></svg>
           <h3>Alcance</h3><p>Quantas pessoas novas veem a marca</p>
         </div>
-        <div class="metric" style="background:var(--surface-2)">
+        <div class="metric" style="background:var(--surface)">
           <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.6c2.4.2 4 1.8 4.5 4.4"/></svg>
           <h3>Seguidores novos</h3><p>Quem passou a acompanhar</p>
         </div>
-        <div class="metric" style="background:var(--surface-2)">
+        <div class="metric" style="background:var(--surface)">
           <svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.7l1-5.9L3.5 9.7l5.9-.8z"/></svg>
           <h3>Salvamentos e envios</h3><p>Conteúdo que vale guardar e mandar pra alguém</p>
         </div>
-        <div class="metric" style="background:var(--surface-2)">
+        <div class="metric" style="background:var(--surface)">
           <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.5-5.3A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 12c1 1 2 1 3.5 0s2.5-1 3.5 0"/></svg>
           <h3>Mensagens espontâneas</h3><p>Quem procura a marca por conta própria</p>
         </div>
-        <div class="metric" style="background:var(--surface-2)">
+        <div class="metric" style="background:var(--surface)">
           <svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg>
           <h3>Reels x estático</h3><p>Qual formato mais atrai o público</p>
         </div>
