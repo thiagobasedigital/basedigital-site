@@ -129,6 +129,11 @@
   .rules div:last-child { border-bottom: 1px solid var(--line); }
   .rules h3 { font-size: 17px; margin-bottom: 4px; }
   .rules p { color: var(--muted); font-size: 15px; }
+  .back { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid rgba(240,237,228,.55); color: #F0EDE4 !important; white-space: nowrap; }
+  .back:hover { background: rgba(240,237,228,.14); border-color: #F0EDE4; }
+  .back .long { display: none; }
+  @media (min-width: 560px) { .back .long { display: inline; } .back .short { display: none; } }
+  .foot-back { color: #F0EDE4; font-weight: 700; text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -141,7 +146,7 @@
   <div class="wrap">
     <a href="index.html" class="wordmark" aria-label="Base Digital"><b>Base</b><span>Digital</span></a>
     <nav>
-      <a class="link" href="index.html">Início</a>
+      <a class="back" href="index.html"><span aria-hidden="true">←</span><span class="long">Voltar ao início</span><span class="short">Início</span></a>
       <a class="btn btn-wa wa-link" data-msg="Olá! Tenho interesse em landing page com a Base Digital." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar no WhatsApp</a>
     </nav>
   </div>
@@ -232,6 +237,7 @@
 
 <footer>
   <div class="wrap">
+    <a class="foot-back" href="index.html">← Voltar ao início</a>
     <span>Base Digital · Juiz de Fora, MG</span>
     <span>Marketing para Instagram</span>
   </div>
