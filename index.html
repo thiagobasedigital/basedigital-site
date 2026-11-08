@@ -210,10 +210,19 @@
   .svc:hover { transform: translateY(-2px); }
   .svc h3 { font-size: 20px; }
   .svc p { color: var(--muted); font-size: 14.5px; flex: 1; }
-  .svc-label { margin-top: 36px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-  .svc-grid-2 { margin-top: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-  .svc.feature { background: var(--surface); border: 1.5px solid var(--accent-text); padding: 28px; }
-  .svc.feature small { align-self: flex-start; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-text); border: 1px solid var(--accent-text); border-radius: 999px; padding: 3px 10px; margin-bottom: 8px; }
+  .biz { margin-top: 48px; background: #004741; color: #F0EDE4; border-radius: 22px; padding: 40px 32px; }
+  .biz .eyebrow { color: #8CD3C3; }
+  .biz h3.biz-title { font-size: clamp(26px, 4vw, 34px); margin: 4px 0 6px; color: #F0EDE4; }
+  .biz > p { color: rgba(240,237,228,.8); max-width: 520px; }
+  .biz-grid { display: grid; gap: 16px; margin-top: 28px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .biz-card { background: rgba(240,237,228,.08); border: 1px solid rgba(240,237,228,.2); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 8px; }
+  .biz-card small { align-self: flex-start; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #8CD3C3; border: 1px solid #8CD3C3; border-radius: 999px; padding: 3px 10px; }
+  .biz-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; margin-top: 6px; }
+  .biz-card p { color: rgba(240,237,228,.82); font-size: 15px; flex: 1; }
+  .biz-card .price { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #8CD3C3; margin-top: 6px; }
+  .biz-card .price small { all: unset; font-size: 14px; font-weight: 500; color: rgba(240,237,228,.7); }
+  .biz-card .btn { margin-top: 12px; }
+  @media (max-width: 520px) { .biz { padding: 28px 20px; } }
   .svc span { margin-top: 10px; font-weight: 700; font-size: 14px; color: var(--accent-text); }
   .scope .yes { background: var(--cyprus); color: var(--sand); }
   .scope .no { background: var(--surface); border: 1px solid var(--line); }
@@ -442,10 +451,26 @@
         <a class="svc" href="servicos.html#artes"><h3>Artes</h3><p>Posts e carrosséis com a cara da marca.</p><span>Ver valores →</span></a>
         <a class="svc" href="servicos.html#animacoes"><h3>Animações</h3><p>Vídeos feitos a partir de imagens dos produtos.</p><span>Ver valores →</span></a>
       </div>
-      <div class="svc-label">Para o seu negócio</div>
-      <div class="svc-grid svc-grid-2">
-        <a class="svc feature" href="gerador-de-orcamentos.html"><small>Ferramenta</small><h3>Gerador de Orçamentos</h3><p>Painel com a sua marca para orçamentos em PDF ou imagem. R$ 50/mês.</p><span>Saiba mais →</span></a>
-        <a class="svc feature wa-link" data-msg="Olá! Tenho interesse em identidade visual com a Base Digital." href="#" target="_blank" rel="noopener"><small>Marca</small><h3>Identidade visual</h3><p>Logo e identidade para a sua marca.</p><span>Falar no WhatsApp →</span></a>
+      <div class="biz">
+        <div class="eyebrow">Para o seu negócio</div>
+        <h3 class="biz-title">Ferramentas e identidade para a sua marca</h3>
+        <p>Soluções prontas, sem precisar de plano de conteúdo.</p>
+        <div class="biz-grid">
+          <div class="biz-card">
+            <small>Ferramenta</small>
+            <h4>Gerador de Orçamentos</h4>
+            <p>Orçamentos em PDF ou imagem, com a sua marca.</p>
+            <div class="price">R$ 50<small> /mês</small></div>
+            <a class="btn btn-wa" href="gerador-de-orcamentos.html">Ver exemplos</a>
+          </div>
+          <div class="biz-card">
+            <small>Marca</small>
+            <h4>Identidade visual</h4>
+            <p>Logo e identidade para a sua marca.</p>
+            <div class="price" style="font-size:18px">Sob consulta</div>
+            <a class="btn btn-wa wa-link" data-msg="Olá! Tenho interesse em identidade visual com a Base Digital." href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar no WhatsApp</a>
+          </div>
+        </div>
       </div>
       <div class="basic" style="margin-top:36px">
         <div>
