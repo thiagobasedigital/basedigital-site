@@ -3,9 +3,12 @@
   .back { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid currentColor; text-decoration: none; white-space: nowrap; }
   .back .long { display: none; }
   @media (min-width: 560px) { .back .long { display: inline; } .back .short { display: none; } }
-  footer .soft-link { width: 100%; font-size: 12px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; opacity: .85; }
-  footer .soft-link:hover { opacity: 1; }
   footer { padding-bottom: 84px; }
+  .shortcut-strip { background: var(--surface); border-block: 1px solid var(--line); color: var(--fg); padding-block: 24px; }
+  .shortcut-strip .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+  .shortcut-strip p { font-size: 16px; max-width: 640px; }
+  .shortcut-strip .btn { width: auto; flex: none; }
+  @media (max-width: 520px) { .shortcut-strip .btn { width: 100%; } }
 </style></head><body>
 
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -635,6 +638,13 @@
   </div>
 </section>
 
+<section class="shortcut-strip" aria-label="Atalho na tela inicial">
+  <div class="wrap">
+    <p><b>Já usa o painel?</b> Veja como deixar o orçamento a um toque da tela inicial do celular, em vídeo ou passo a passo.</p>
+    <a class="btn btn-sm" href="atalho-orcamento.html">Ver como fazer</a>
+  </div>
+</section>
+
 <section class="final band" id="contato">
   <div class="wrap">
     <div>
@@ -645,7 +655,7 @@
       </a>
     </div>
     <div class="contact">
-      <div><small>WhatsApp</small><b>(32) 9812-6127</b></div>
+      <div><small>WhatsApp</small><b>(32) 9 9812-6127</b></div>
       <div><small>Instagram</small><a href="https://www.instagram.com/basedigital.mkt" target="_blank" rel="noopener">@basedigital.mkt</a></div>
     </div>
   </div>
@@ -655,7 +665,6 @@
   <div class="wrap">
     <span>Base Digital · Painel de Orçamentos</span>
     <span>Exemplos ilustrativos. Valores de orçamento fictícios.</span>
-    <a class="soft-link" href="atalho-orcamento.html">Como colocar o atalho na tela inicial do celular</a>
   </div>
 </footer>
 
